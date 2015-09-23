@@ -31,9 +31,6 @@ class ApiController extends Controller
         
         if(strtoupper($sMethod) == "GET") {
             if(strtoupper($this->sStructureType) == self::XML){
-                /******
-                 * this is broken
-                 */
                 return new XMLResponse($testArray, 200);
             } 
             return new JsonResponse($testArray, 200);
@@ -41,6 +38,11 @@ class ApiController extends Controller
         return new JsonResponse($this->requestStatus(405), 405);
     }
     
+    /**
+     * 
+     * @param int $iCode
+     * @return type
+     */
      private function requestStatus($iCode) {
         $aStatus = array(
             200 => 'OK',
@@ -52,6 +54,10 @@ class ApiController extends Controller
         return ($aStatus[$iCode])?$aStatus[$iCode]:$aStatus[500];
     }
     
+    /**
+     * 
+     * @param string $sValue
+     */
     private function setReturnType($sValue) {
         preg_match('([^.]+$)', $sValue, $aMatches);
         if(count($aMatches) > 0 && $aMatches[0] != $sValue) {
