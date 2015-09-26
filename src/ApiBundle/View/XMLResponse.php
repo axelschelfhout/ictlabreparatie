@@ -4,7 +4,7 @@
  * (c) Axel Schelfhout 
  */
 
-namespace ApiBundle\Lib;
+namespace ApiBundle\View;
 
 use Symfony\Component\HttpFoundation\Response;
 
