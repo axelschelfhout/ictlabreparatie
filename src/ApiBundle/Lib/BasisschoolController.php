@@ -19,7 +19,6 @@ class BasisschoolController extends ApiController
      * @return type
      */
     public function handle($sMethod,$sAction,$aArgs) {
-        
         $sFunction = $sMethod.ucfirst($sAction);
           
         if(method_exists($this, $sFunction)){
@@ -32,11 +31,15 @@ class BasisschoolController extends ApiController
     }
     
     public function getCity($aArgs) {
-        return array('City' => $aArgs);
+        
+        
+        
+        return array('City' => 'City');
     }
     
     public function getRange($aArgs) {
-        return array('Range' => $aArgs);
+        
+        return array('Range' => 'Range');
     }
     
 }

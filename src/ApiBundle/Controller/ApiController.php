@@ -119,6 +119,7 @@ class ApiController extends Controller
      */
     private function setReturnType($mReturn) {
         $sEndpoint = '';
+        $aMatches = array();
         
         if(is_array($mReturn)) {
             $sEndpoint = end($mReturn);
@@ -134,20 +135,23 @@ class ApiController extends Controller
         }
     }
     
-    
+    /**
+     * 
+     * @param mixed $mValue
+     * @return type
+     */
     private function stripLastArgumentInRequestFromStructureType($mValue)
     {
         if(is_array($mValue)) {
-            //
+            $aEndpoint = explode('.',end($mValue));
+            reset($mValue);
+            
+            $mValue[count($mValue) - 1] = $aEndpoint[0];
+            return $mValue;
         } else {
             $aEndpoint = explode('.',$mValue);
-            $sStripedValue = $aEndpoint[0];
-            return $sStripedValue;
+            return $aEndpoint[0];
         }
-        
-//        $sEndpoint = explode('.',$this->sLastArgumentInUrl);
-//        $this->sLastArgumentInUrl = $sEndpoint[0];
-//        $this->aArgs[count($this->aArgs)-1] = $this->sLastArgumentInUrl;
     }
     
 }
