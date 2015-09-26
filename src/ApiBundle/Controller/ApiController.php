@@ -1,11 +1,11 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use AppBundle\Lib\XMLResponse;
+use ApiBundle\Lib\XMLResponse;
 
 class ApiController extends Controller
 {
