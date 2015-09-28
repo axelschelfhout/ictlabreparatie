@@ -1,0 +1,47 @@
+<?php
+
+namespace ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Attributes
+ *
+ * @ORM\Table(name="attributes", indexes={@ORM\Index(name="name_index", columns={"name", "value"}), @ORM\Index(name="fk_attributetype_idx", columns={"attributetype"})})
+ * @ORM\Entity
+ */
+class Attributes
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attributetype", type="integer", nullable=false)
+     */
+    private $attributetype;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="string", length=256, nullable=false)
+     */
+    private $value;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attributeId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $attributeid;
+
+
+}
+

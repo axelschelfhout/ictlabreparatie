@@ -1,0 +1,75 @@
+<?php
+
+namespace ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Profiles
+ *
+ * @ORM\Table(name="profiles")
+ * @ORM\Entity
+ */
+class Profiles
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SoortAanbod", type="string", length=45, nullable=true)
+     */
+    private $soortaanbod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HuisPrijsVan", type="string", length=45, nullable=true)
+     */
+    private $huisprijsvan;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HuisPrijsTot", type="string", length=45, nullable=true)
+     */
+    private $huisprijstot;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HeeftBalkon", type="string", length=45, nullable=true)
+     */
+    private $heeftbalkon;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HeeftCv", type="string", length=45, nullable=true)
+     */
+    private $heeftcv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HeeftGarage", type="string", length=45, nullable=true)
+     */
+    private $heeftgarage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="HeeftTuin", type="string", length=45, nullable=true)
+     */
+    private $heefttuin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

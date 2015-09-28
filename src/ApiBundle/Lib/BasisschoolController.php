@@ -8,8 +8,12 @@ namespace ApiBundle\Lib;
 
 use ApiBundle\Controller\ApiController;
 
+use ApiBundle\Entity\ScholenAttr;
+use ApiBundle\Entity\Attributes;
+
 class BasisschoolController extends ApiController
 {
+    
     /**
      * Handle the Function request.
      * 
@@ -30,14 +34,21 @@ class BasisschoolController extends ApiController
         }
     }
     
+    
     public function getCity($aArgs) {
         
-        
+        /*
+         * Query all the schools inside city.
+         */
         
         return array('City' => 'City');
     }
     
     public function getRange($aArgs) {
+        
+        /*
+         * Query all the schools inside the given address and range
+         */
         
         return array('Range' => 'Range');
     }

@@ -1,0 +1,35 @@
+<?php
+
+namespace ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CodeAttribute
+ *
+ * @ORM\Table(name="code_attribute", indexes={@ORM\Index(name="fk_codeattribute_atributeId_idx", columns={"attributeId"})})
+ * @ORM\Entity
+ */
+class CodeAttribute
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="areacodeId", type="string", length=12)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $areacodeid;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="attributeId", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $attributeid;
+
+
+}
+
