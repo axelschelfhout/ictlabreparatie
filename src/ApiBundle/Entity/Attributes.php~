@@ -43,5 +43,86 @@ class Attributes
     private $attributeid;
 
 
-}
 
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Attributes
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set attributetype
+     *
+     * @param integer $attributetype
+     *
+     * @return Attributes
+     */
+    public function setAttributetype($attributetype)
+    {
+        $this->attributetype = $attributetype;
+
+        return $this;
+    }
+
+    /**
+     * Get attributetype
+     *
+     * @return integer
+     */
+    public function getAttributetype()
+    {
+        return $this->attributetype;
+    }
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     *
+     * @return Attributes
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Get attributeid
+     *
+     * @return integer
+     */
+    public function getAttributeid()
+    {
+        return $this->attributeid;
+    }
+}

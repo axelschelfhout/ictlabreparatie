@@ -29,5 +29,38 @@ class Attributetype
     private $attributetypeid;
 
 
-}
 
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Attributetype
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get attributetypeid
+     *
+     * @return integer
+     */
+    public function getAttributetypeid()
+    {
+        return $this->attributetypeid;
+    }
+}

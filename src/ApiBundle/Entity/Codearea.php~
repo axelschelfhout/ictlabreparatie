@@ -36,5 +36,62 @@ class Codearea
     private $codeareaid;
 
 
-}
 
+    /**
+     * Set geoid
+     *
+     * @param integer $geoid
+     *
+     * @return Codearea
+     */
+    public function setGeoid($geoid)
+    {
+        $this->geoid = $geoid;
+
+        return $this;
+    }
+
+    /**
+     * Get geoid
+     *
+     * @return integer
+     */
+    public function getGeoid()
+    {
+        return $this->geoid;
+    }
+
+    /**
+     * Set areaflagid
+     *
+     * @param integer $areaflagid
+     *
+     * @return Codearea
+     */
+    public function setAreaflagid($areaflagid)
+    {
+        $this->areaflagid = $areaflagid;
+
+        return $this;
+    }
+
+    /**
+     * Get areaflagid
+     *
+     * @return integer
+     */
+    public function getAreaflagid()
+    {
+        return $this->areaflagid;
+    }
+
+    /**
+     * Get codeareaid
+     *
+     * @return string
+     */
+    public function getCodeareaid()
+    {
+        return $this->codeareaid;
+    }
+}

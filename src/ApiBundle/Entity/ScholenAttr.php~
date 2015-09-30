@@ -36,5 +36,62 @@ class ScholenAttr
     private $id;
 
 
-}
 
+    /**
+     * Set schoolid
+     *
+     * @param integer $schoolid
+     *
+     * @return ScholenAttr
+     */
+    public function setSchoolid($schoolid)
+    {
+        $this->schoolid = $schoolid;
+
+        return $this;
+    }
+
+    /**
+     * Get schoolid
+     *
+     * @return integer
+     */
+    public function getSchoolid()
+    {
+        return $this->schoolid;
+    }
+
+    /**
+     * Set attrId
+     *
+     * @param integer $attrId
+     *
+     * @return ScholenAttr
+     */
+    public function setAttrId($attrId)
+    {
+        $this->attrId = $attrId;
+
+        return $this;
+    }
+
+    /**
+     * Get attrId
+     *
+     * @return integer
+     */
+    public function getAttrId()
+    {
+        return $this->attrId;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

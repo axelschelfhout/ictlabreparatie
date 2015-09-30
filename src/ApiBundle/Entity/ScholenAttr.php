@@ -18,7 +18,7 @@ class ScholenAttr
      * @ORM\Column(name="schoolId", type="integer", nullable=true)
      */
     private $schoolid;
-
+    
     /**
      * @var integer
      *
@@ -36,6 +36,8 @@ class ScholenAttr
     private $id;
 
 
+    
+    
 
     /**
      * Set schoolid

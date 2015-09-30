@@ -31,5 +31,52 @@ class CodeAttribute
     private $attributeid;
 
 
-}
 
+    /**
+     * Set areacodeid
+     *
+     * @param string $areacodeid
+     *
+     * @return CodeAttribute
+     */
+    public function setAreacodeid($areacodeid)
+    {
+        $this->areacodeid = $areacodeid;
+
+        return $this;
+    }
+
+    /**
+     * Get areacodeid
+     *
+     * @return string
+     */
+    public function getAreacodeid()
+    {
+        return $this->areacodeid;
+    }
+
+    /**
+     * Set attributeid
+     *
+     * @param integer $attributeid
+     *
+     * @return CodeAttribute
+     */
+    public function setAttributeid($attributeid)
+    {
+        $this->attributeid = $attributeid;
+
+        return $this;
+    }
+
+    /**
+     * Get attributeid
+     *
+     * @return integer
+     */
+    public function getAttributeid()
+    {
+        return $this->attributeid;
+    }
+}
