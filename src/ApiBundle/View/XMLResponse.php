@@ -42,10 +42,10 @@ class XMLResponse extends Response {
     }
     
     /**
-     * 
+     * Creates XML from array
      * @param Array $aArray
      * @param SimpleXMLElement $oXML
-     * @return type
+     * @return SimpleXMLElement
      */
     private function createXML($aArray, $oXML)
     {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ApiBundle\Entity\Codearea" table="codearea">
+    <indexes>
+      <index name="fk_geo_code_idx" columns="geoId"/>
+      <index name="fk_areaflag_idx" columns="areaflagId"/>
+    </indexes>
+    <id name="codeareaid" type="string" column="codeareaId" length="30">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="geoid" type="integer" column="geoId" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="areaflagid" type="integer" column="areaflagId" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>
