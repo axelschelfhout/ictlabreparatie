@@ -10,29 +10,19 @@ abstract class LatitudeLongitude
 {
     
     /**
-     * 
-     * @param type $sCity
-     * @param type $sStreet
-     * @param type $sNumber
-     * @return type
+     * Get the LatLng from an address
+     * @param string $sCity
+     * @param string $sStreet
+     * @param string $sNumber
+     * @return array
      */
     public static function getLatLng($sCity,$sStreet,$sNumber) {
         $sApiKey = 'AIzaSyCnTprn4t0Z7a9G_wCJOo7je8exBgGw5_Q';
         
         $sAddress = "{$sStreet},{$sNumber},{$sCity}";
         $sAddress = str_replace(' ','%20',$sAddress); // Replace spaces with html encoding for the URL to be correct.
-        $sUrl = "https://maps.google.com/maps/api/geocode/json?address={$sAddress}&sensor=false&key={$sApiKey}"; // Build the URL to get geometry data
-        
-        $oCurl = curl_init(); // Start transaction
-        curl_setopt($oCurl, CURLOPT_URL, $sUrl);
-        curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($oCurl, CURLOPT_PROXYPORT, 3128);
-        curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, 0);
-        $oResponse = curl_exec($oCurl); // Save the response
-        curl_close($oCurl); //Close transaction
 
-        $oResponse = json_decode($oResponse); // Decode the response
+        $oResponse = json_decode(self::getLatLngFromAddressWithGoogleGeocode($sAddress, $sApiKey)); // Decode the response\
         $aReturn = array();
         
         if($oResponse){
@@ -50,7 +40,27 @@ abstract class LatitudeLongitude
         return $aReturn;
     }
     
-    
+    /**
+     * Get the longitude and latitude from an address using the Google Geocode API
+     * @param string $sAddress
+     * @param string $sApiKey
+     * @return object
+     */
+    private static function getLatLngFromAddressWithGoogleGeocode($sAddress,$sApiKey)
+    {
+        $sUrl = "https://maps.google.com/maps/api/geocode/json?address={$sAddress}&sensor=false&key={$sApiKey}"; // Build the URL to get geometry data
+        
+        $oCurl = curl_init(); // Start transaction
+        curl_setopt($oCurl, CURLOPT_URL, $sUrl);
+        curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($oCurl, CURLOPT_PROXYPORT, 3128);
+        curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, 0);
+        $oResponse = curl_exec($oCurl); // Save the response
+        curl_close($oCurl); //Close transaction
+        
+        return $oResponse;
+    }
     
     
     /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
@@ -89,8 +99,6 @@ abstract class LatitudeLongitude
 
         return ($miles * 1.609344);
     }
-    
-    
     
 }
 
